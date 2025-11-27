@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>お問い合わせ</title>
+</head>
+<body>
+    <h1>お問い合わせ</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">送信</button>
+    </form>
+
+    <a href="/">ホームへ戻る</a>
+</body>
+</html>

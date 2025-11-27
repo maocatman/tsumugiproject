@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}掲示板一覧{% endblock %}
+
+{% block content %}
+
+<h1>掲示板一覧</h1>
+
+{% for post in posts %}
+    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.text|truncatewords:20 }}</p>
+{% empty %}
+    <p>まだ投稿はありません。</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+        <a href="{% url 'post_create' %}">新規投稿</a>
+{% endif %}
+
+{% endblock %}

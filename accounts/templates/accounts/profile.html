@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}プロフィールページ{% endblock %}
+
+{% block content %}
+<h1>プロフィール</h1>
+
+<p>ユーザー名: {{ request.user.username }}</p>
+<p>メールアドレス: {{ request.user.email }}</p>
+<a href="/accounts/logout/">ログアウト</a>
+<br>
+<a href="/">ホームへ戻る</a>
+{% endblock %}
