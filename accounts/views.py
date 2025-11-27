@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-@login_required
+
 
 def signup(request):
     if request.method == "POST":
@@ -14,5 +14,6 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
 
+@login_required
 def profile(request):
     return render(request, 'accounts/profile.html')
